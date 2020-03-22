@@ -3,6 +3,7 @@ npm publish
 --- 
 
 1. package.json
+    - [click to see example](https://github.com/cheesepaninim/boilerplate/blob/_npm_publish/_npm_publish/package.json)
     - must have
         - name / version ( ready to publish )
         - how to write version: [versioner](https://docs.npmjs.com/misc/semver)
@@ -10,9 +11,11 @@ npm publish
     - nice to have
         - homepage / bugs / license / author / contribuotrs / main / repository / files / browser / engines
         - files field is not necessary   
-            (if not exists npm publish not in .npmignore)
+            (if not exists npm publish all but in .npmignore)
 
 2. LICENSE
+    - write down LICENSE(or LICENSE.md) from github(or wherever) 
+    [click here](https://help.github.com/en/github/building-a-strong-community/adding-a-license-to-a-repository)
 
 3. README.md
 
