@@ -1,6 +1,12 @@
 $ npm init -y
 $ npm i react react-dom next
 
+// express settings
+$ npm i express helmet
+// use NODE_ENV
+$ npm i -g cross-env
+[server.js]
+
 // You can also use Connect compatible middleware.
 // For example, configuring CORS for your API endpoint can be done leveraging the cors package.
 $ npm i cors
