@@ -1,2 +1,24 @@
 $ npm init -y
 $ npm i react react-dom next
+
+// You can also use Connect compatible middleware.
+// For example, configuring CORS for your API endpoint can be done leveraging the cors package.
+$ npm i cors
+
+// usage
+[pages/api/index.js]
+
+// use global css
+[pages/_app.js]
+  // [next.config.js] -> withCSS // -> deprecated
+
+// use sass files
+$ npm i @zeit/next-sass
+[next.config.js] -> withSass
+
+// use sass inside styled jsx
+$ npm i -D node-sass styled-jsx-plugin-sass
+[.babelrc]
+
+// ajax call
+$ npm i axios
