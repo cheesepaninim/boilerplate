@@ -1,2 +1,2 @@
 # boilerplate
-boilerplate samples
+boilerplate
