@@ -1,0 +1,21 @@
+$ npm init -y
+$ npm i react react-dom next
+
+// redux
+$ npm i redux react-redux
+
+// hoc for redux with nextjs
+$ npm i next-redux-wrapper
+[pages/_app.js]
+
+
+/*
+  # issue
+  having trouble with getInitialProps..
+
+*/
+
+
+// usage
+[redux/reducers/rootReducer.js]
+[redux/reducers/user.js]
