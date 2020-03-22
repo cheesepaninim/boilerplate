@@ -1,5 +1,5 @@
 const config = require('./config')
-const assetPrefix = process.env.NODE_ENV === `production` ? config.prod.assetPrefix : config.dev.assetPrefix
+const assetPrefix = config[process.env.NODE_ENV].assetPrefix
 const withSass = require('@zeit/next-sass')
 
 module.exports = withSass({
