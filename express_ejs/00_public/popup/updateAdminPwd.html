@@ -1,0 +1,31 @@
+<div class="popHeader">
+  <h3>Admin 사용자 정보변경</h3>
+  <div class="popClose">
+    <div>X</div>
+  </div>
+</div>
+
+<form class="popForm">
+  <div class="p-f-row">
+    <label for="updateAdmin_user_nm">관리자명</label>
+    <input type="text" name="updateAdmin_user_nm" id="updateAdmin_user_nm" disabled="disabled">
+  </div>
+
+  <div class="p-f-row">
+    <div class="p-f-col">
+      <label for="current_pwd">현재 비밀번호</label>
+      <input type="password" name="current_pwd" id="current_pwd">
+    </div>
+    <div class="p-f-col">
+      <label for="new_pwd">변경 비밀번호</label>
+      <input type="password" name="new_pwd" id="new_pwd">
+    </div>
+    <div class="p-f-col">
+      <label for="new_pwd_check">변경 비밀번호 확인</label>
+      <input type="password" name="new_pwd_check" id="new_pwd_check">
+    </div>
+  </div>
+
+  <button id="saveAdminInfo">저장</button>
+
+</form>

@@ -1,0 +1,77 @@
+<h3>회원관리</h3>
+
+<form class="search" method="post">
+  <div class="s-contents s-content1">
+    <label for="user_nm">회원</label>
+    <input type="text" name="user_id" id="user_id">
+    <input type="text" name="user_no" id="user_no" style="display: none;">
+    <input type="text" name="user_nm" id="user_nm" disabled="disabled">
+    <button type="button" class="popSearch" id="searchUser" data-checked=true>검색</button>
+  </div>
+
+  <div class="s-contents s-content2">
+    <label for="user_type">회원종류</label>
+    <select name="user_type" id="user_type">
+      <option value="all" selected="selected">전체</option>
+      <option value="1">agency</option>
+      <option value="2">가맹점</option>
+    </select>
+  </div>
+
+  <div class="s-contents s-content3">
+    <label for="user_sts">회원상태</label>
+    <select name="user_sts" id="user_sts">
+      <option value="all" selected="selected">전체</option>
+      <option value="1">최초 이메일 인증 요청중</option>
+      <option value="2">최초 이메일 인증 완료</option>
+      <option value="3">유저 정보 등록 완료</option>
+      <option value="4">가입신청 완료</option>
+      <option value="5">회원가입 완료</option>
+      <option value="0">탈퇴</option>
+    </select>
+  </div><br>
+
+  <div class="s-contents s-content1">
+    <label for="mcht_nm">가맹점</label>
+    <input type="text" name="mcht_no" id="mcht_no">
+    <input type="text" name="mcht_nm" id="mcht_nm" disabled="disabled">
+    <button type="button" class="popSearch" id="searchMcht" data-checked=true>검색</button>
+  </div>
+</form>
+
+<div class="">
+  <button id="searchList" type="button">조회</button>
+  <button id="excelDownload" type="button">엑셀</button>
+</div>
+
+<table class="r-table">
+  <colgroup>
+    <col width="5%">
+    <col width="8%">
+    <col width="15%">
+    <col width="12%">
+    <col width="12%">
+    <col width="7%">
+    <col width="10%">
+    <col width="8%">
+    <col width="12%">
+    <col width="10%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th id="th_rnum" scope="col">No.</th>
+      <th id="th_user_no" scope="col">회원번호</th>
+      <th id="th_user_id" class="view" scope="col">ID</th>
+      <th id="th_user_nm" scope="col">회원명</th>
+      <th id="th_pay_bal" scope="col">한도잔액</th>
+      <th id="th_user_sts" scope="col">회원상태</th>
+      <th id="th_user_type" scope="col">회원종류</th>
+      <th id="th_mcht_user_type" scope="col">가맹점<br>회원구분</th>
+      <th id="th_mcht_nm_ko" scope="col">가맹점</th>
+      <th id="th_remark" scope="col">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>

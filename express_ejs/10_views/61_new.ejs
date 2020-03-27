@@ -1,0 +1,111 @@
+
+<h3>게시판 신규등록</h3>
+
+<form class="register" method="post">
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="seq_no">일련번호</label>
+      <input type="text" name="seq_no" id="seq_no" disabled="disabled">
+    </div>
+    <div class="r-right-col">
+      <label for="user_no">회원</label>
+      <input type="text" name="user_no" id="user_no" disabled="disabled" value="99999999">
+      <input type="text" name="user_nm" id="user_nm" disabled="disabled">
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="bull_type">게시종류</label>
+      <select name="bull_type">
+        <option value="1" selected="selected">공지</option>
+        <option value="2">FAQ</option>
+      </select>
+    </div>
+    <div class="r-right-col">
+      <label for="bull_sts">게시상태</label>
+      <select name="bull_sts">
+        <!-- 공지, FAQ 는 2로 설정 -->
+        <option value="2" selected="selected">처리완료</option>
+        <option value="9" disabled="disabled">삭제</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="bull_category">문의/FAQ 분류</label>
+      <select name="bull_category">
+        <option value="1" selected="selected">사용안내</option>
+        <option value="2">회원가입</option>
+        <option value="3">결제</option>
+        <option value="4">충전</option>
+        <option value="5">기타</option>
+      </select>
+    </div>
+    <div class="r-right-col">
+      <label for="push_dt">게시기간</label>
+      <input required="required" type="text" name="push_start_dt" id="push_start_dt" class="dt start_date dt_picker" readonly>~
+      <input required="required" type="text" name="push_end_dt" id="push_end_dt" class="dt end_date dt_picker" value="2999/12/31" readonly>
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="reg_dt">작성일자</label>
+      <input type="text" name="reg_dt" id="reg_dt" class="default_dt" disabled="disabled">
+    </div>
+    <div class="r-right-col">
+
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="att_filename">첨부파일명</label>
+      <input type="text" name="att_filename" id="att_filename">
+    </div>
+    <div class="r-right-col">
+
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="bull_title_ko">제목(한)</label>
+      <input required="required" type="text" name="bull_title_ko" id="bull_title_ko">
+    </div>
+    <div class="r-right-col">
+      <label for="bull_cont_ko">내용(한)</label>
+      <input required="required" type="text" name="bull_cont_ko" id="bull_cont_ko">
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="bull_title_cn">제목(중)</label>
+      <input type="text" name="bull_title_cn" id="bull_title_cn">
+    </div>
+    <div class="r-right-col">
+      <label for="bull_cont_cn">내용(중)</label>
+      <input type="text" name="bull_cont_cn" id="bull_cont_cn">
+    </div>
+  </div>
+
+  <div class="r-row">
+    <div class="r-left-col">
+      <label for="bull_title_en">제목(영)</label>
+      <input type="text" name="bull_title_en" id="bull_title_en">
+    </div>
+    <div class="r-right-col">
+      <label for="bull_cont_en">내용(영)</label>
+      <input type="text" name="bull_cont_en" id="bull_cont_en">
+    </div>
+  </div>
+
+</form>
+
+<div class="">
+  <button id="register" type="button">입력</button>
+  <button id="backToList" type="button">이전</button>
+</div>

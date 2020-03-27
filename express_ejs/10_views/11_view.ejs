@@ -1,0 +1,150 @@
+
+<h3>회원정보 상세조회 및 변경</h3>
+
+<form class="update">
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="user_id">회원번호/ID</label>
+      <input type="text" name="user_no" id="user_no" disabled="disabled" value="<%=rows[0].user_no %>">
+      <input type="text" name="user_id" id="user_id" disabled="disabled" required="required" value="<%=rows[0].user_id %>">
+    </div>
+    <div class="u-right-col">
+      <label for="user_sts">회원상태</label>
+      <select name="user_sts" id="user_sts" value="<%=rows[0].user_sts %>">
+        <option value="1" selected="selected">최초 이메일 인증 요청 중</option>
+        <option value="2">최초 이메일 인증 완료</option>
+        <option value="3">유저 정보 등록 완료</option>
+        <option value="4">가입 신청 완료</option>
+        <option value="5">회원 가입 완료</option>
+        <option value="0">탈퇴</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="user_type">회원종류</label>
+      <select name="user_type" id="user_type" value="<%=rows[0].user_type %>">
+        <option value="1" selected="selected">Agency</option>
+        <option value="2">가맹점</option>
+      </select>
+    </div>
+    <div class="u-right-col">
+      <label for="user_nm">회원명</label>
+      <input type="text" name="user_nm" id="user_nm" value="<%=rows[0].user_nm %>" maxlength="50">
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <!-- 회원 종류가 가맹점인 경우에만 활성화 -->
+      <label for="mcht_user_type">가맹점 사용자 구분</label>
+      <select name="mcht_user_type" id="mcht_user_type" value="<%=rows[0].mcht_user_type %>"
+         <% if(rows[0].user_type != 2){ %>disabled="disabled"<% } %>
+        >
+        <option value="M" selected="selected">가맹점 대표자</option>
+        <option value="S">가맹점 관리자</option>
+      </select>
+    </div>
+    <div class="u-right-col">
+
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="counter_pass">비밀번호오류 횟수</label>
+      <input type="text" name="counter_pass" id="counter_pass" value="<%=rows[0].counter_pass %>">
+    </div>
+    <div class="u-right-col">
+      <label for="wallet_address">개인지갑주소</label>
+      <input type="text" name="wallet_address" id="wallet_address" disabled="disabled" value="<%=rows[0].wallet_address %>">
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="reg_dt">가입요청일자</label>
+      <input type="text" name="reg_dt" id="reg_dt" disabled="disabled" value="<%=rows[0].reg_dt %>">
+    </div>
+    <div class="u-right-col">
+      <label for="reg_tm">가입요청시간</label>
+      <input type="text" name="reg_tm" id="reg_tm" disabled="disabled" value="<%=rows[0].reg_tm %>">
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="counter_cert">인증번호 오류 횟수</label>
+      <input type="text" name="counter_cert" id="counter_cert" value="<%=rows[0].counter_cert %>">
+    </div>
+    <div class="u-right-col">
+      <label for="cert_req_tm">인증요청시각</label>
+      <input type="text" name="cert_req_tm" id="cert_req_tm" disabled="disabled" value="<%=rows[0].cert_req_tm %>">
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="confirm_dt">등록일자</label>
+      <input type="text" name="confirm_dt" id="confirm_dt" class="dt_picker" value="<%=rows[0].confirm_dt %>" readonly>
+    </div>
+    <div class="u-right-col">
+      <label for="confirm_tm">등록시간</label>
+      <input type="text" name="confirm_tm" id="confirm_tm" value="<%=rows[0].confirm_tm %>">
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="can_dt">탈퇴일자</label>
+      <input type="text" name="can_dt" id="can_dt" class="dt_picker" value="<%=rows[0].can_dt %>" readonly>
+    </div>
+    <div class="u-right-col">
+      <label for="can_tm">탈퇴시간</label>
+      <input type="text" name="can_tm" id="can_tm" value="<%=rows[0].can_tm %>">
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <!-- 회원 종류가 가맹점인 경우에만 활성화 -->
+      <!-- 해당 경우에는 mcht_nm_ko도 가져가기 -->
+      <label for="mcht_nm_ko">가맹점</label>
+      <input type="text" name="mcht_no" id="mcht_no" value="<%=rows[0].mcht_no %>"
+       <% if(rows[0].user_type != 2){ %> disabled<% } %>
+      >
+      <input type="text" name="mcht_nm_ko" id="mcht_nm_ko" disabled="disabled" value="<%=rows[0].mcht_nm_ko %>">
+      <button type="button" class="popSearch" id="searchMcht" data-checked=true>검색</button>
+    </div>
+    <div class="u-right-col">
+
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="tel_no">연락처</label>
+      <input type="text" name="tel_no" id="tel_no" value="<%=rows[0].tel_no %>">
+    </div>
+    <div class="u-right-col">
+
+    </div>
+  </div>
+
+  <div class="u-row">
+    <div class="u-left-col">
+      <label for="remark">비고</label>
+      <input type="text" name="remark" id="remark" value="<%=rows[0].remark %>">
+    </div>
+    <div class="u-right-col">
+
+    </div>
+  </div>
+
+</form>
+
+<div class="">
+  <button id="update" type="button">저장</button>
+  <button id="goBackFromView" type="button">이전</button>
+</div>

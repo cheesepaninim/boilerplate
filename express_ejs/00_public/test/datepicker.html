@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">
+<script>
+ $(function() {
+
+
+    $('.start_date').datepicker( {
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'yy/mm/dd',
+        closeText: '선택',
+        currentText: '오늘',
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        dayNamesMin: ['일','월','화','수','목','금','토'],
+        onSelect : function(dateText, inst) { 
+             var stDate = dateText.split("/");  
+             var dt = new Date(stDate[0], stDate[1], stDate[2]);  
+             var year = dt.getFullYear(); 
+             var month = dt.getMonth() + 1; 
+             var month = month + ""; 
+             if(month.length == "1") var month = "0" + month; 
+             var day = dt.getDate();  
+             var day = day + "";   
+             if(day.length == "1") var day = "0" + day;
+             var nextMonth = year + "/" + month + "/" + day;
+             $(".end_date").datepicker("option", "maxDate", new Date(year, month-1, day));
+        },
+     	onClose: function( selectedDate ) {
+     		var stDate = selectedDate.split("/"); 
+     		$(".end_date").datepicker("option", "minDate", new Date(stDate[0], stDate[1]-1, stDate[2]));
+        }
+    });
+
+    $('.end_date').datepicker( {
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'yy/mm/dd',
+        closeText: '선택',
+        currentText: '오늘',
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        dayNamesMin: ['일','월','화','수','목','금','토'],
+     	onSelect : function(dateText, inst) { 
+             var stDate = dateText.split("/");  
+             var dt = new Date(stDate[0], stDate[1], stDate[2]);  
+             var year = dt.getFullYear(); 
+             var month = dt.getMonth(); 
+             var month = month + ""; 
+             if(month.length == "1") var month = "0" + month; 
+             var day = dt.getDate();  
+             var day = day + "";   
+             if(day.length == "1") var day = "0" + day;
+             var nextMonth = year + "/" + month + "/" + day;
+             $(".start_date").datepicker("option", "minDate", new Date(year, month-2, day));
+        }, 
+     	onClose: function(selectedDate) {
+     		var stDate = selectedDate.split("/"); 
+     		$(".start_date").datepicker("option", "maxDate", new Date(stDate[0], stDate[1]-1, stDate[2]));
+        }
+    });
+
+
+ 	$.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
+    $.datepicker._updateDatepicker = function(inst) {
+        $.datepicker._updateDatepicker_original(inst);
+        var afterShow = this._get(inst, 'afterShow');
+        if (afterShow) afterShow.apply((inst.input ? inst.input[0] : null));
+    }
+
+    $('.date-picker2').datepicker( {
+    	changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'yy/mm',
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        dayNamesMin: ['일','월','화','수','목','금','토'],
+        afterShow: function(inst) {
+       		$('.ui-datepicker-calendar').css('display', 'none');
+      	},
+      	onClose: function(selectedDate) {
+     		var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).datepicker('setDate', new Date(year, month, 1));
+            $(this).blur();
+        }
+    });
+
+    $( ".start_date" ).datepicker( "setDate", new Date());
+ 	$( ".end_date" ).datepicker( "setDate", new Date());
+ 	$( ".date-picker2" ).datepicker( "setDate", new Date());
+});
+
+</script>
+<style>
+	.ui-datepicker-trigger{cursor: pointer;}
+</style>
+</head>
+<body>
+
+시작<input type="text" class="start_date default_dt" id="start_date" readonly>~
+종료<input type="text" class="end_date default_dt"  readonly>	
+
+<br><br><br>
+
+년월<input type="text" class="date-picker2" readonly>
+
+
+</body>
+</html>

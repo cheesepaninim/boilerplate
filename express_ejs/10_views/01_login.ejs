@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <% include ./include/_head.ejs %>
+</head>
+<body>
+  <div class="loginContainer">
+    <div class="loginBox">
+      <div class="loginHeader">CEPAY Admin</div>
+      <div class="loginMain">
+        <div class="login-left">
+          <input type="text" name="id" id="login_id" placeholder="ID 를 입력해주세요.">
+          <input type="password" name="pwd" id="login_pwd" placeholder="비밀번호를 입력해주세요.">
+        </div>
+        <div class="login-right">
+          <button id="login" type="button">login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ $('.loginContainer input[name=id]').focus() })
+
+// login
+  $('#login').on('click', function(){
+
+    var id = $('#login_id').val()
+    var pwd = $('#login_pwd').val()
+
+    /* check#검증 모듈로 대체? */
+    if(id === '' || pwd === '') return alert('ID 와 비밀번호를 입력해주세요.')
+
+    var postData = {id, pwd}
+    $.post('/login', postData, function(data){
+
+      switch(data){
+        case '200':
+          location.href = location.origin + '<%= pathname %>'
+          break
+        default:
+          alert(data)
+          break
+      }
+
+    })
+  })
+
+  $('#login_id, #login_pwd').on('keyup', function(e){ if(e.keyCode === 13) $('#login').click() })
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<script>
+$(document).ready(function(){
+// nav set
+  var title = '<%= title %>'
+  var page = '<%= page %>'
+  var user_nm = '<%= user.user_nm %>'
+  var user_auth = '<%= user.user_auth %>'
+  var view = JSON.parse('<%- JSON.stringify(user.user_view) %>')
+  var menu = JSON.parse('<%- JSON.stringify(menu) %>')
+
+  for(var i=0; i<view.length; i++){
+    if(view[i].length !== 0){
+      var cat_name = menu[i+1].cat_name
+      var $cat = $('<li/>').addClass('cat').append($('<span/>').text(cat_name)).append($('<ul/>'))
+      if(+page.substr(0,1) === (i+1)) $cat.addClass('active')
+      for(var j=0; j<view[i].length; j++){
+          var menu_name = menu[i+1][view[i][j]]
+          if(menu_name !== ''){
+            var $menu = $('<li/>').addClass('menu').append($('<span/>').text(menu_name).attr('id', view[i][j]))
+            $menu.appendTo($cat.children('ul'))
+          }
+      }
+      $cat.appendTo($('nav>ul'))
+    }
+  }
+
+// nav toggle
+  $('nav li.cat>span').on('click', function(){
+    $(this).parents().siblings().removeClass('active')
+    $(this).parents().toggleClass('active')
+  })
+
+// nav page move
+  $('.cat .menu>span').on('click', function(){
+    location.href = location.origin + '/' + $(this).attr('id')
+
+  })
+
+// logout
+  $('#logout').on('click', function(){
+    // console.log('logout clicked')
+    $.post('/logout', function(data){
+      if(data === '200') location.href = location.origin
+      else alert('알 수 없는 오류가 발생했습니다.\n관리자에게 문의해주세요\n( error : 0-02 )')
+    })
+  })
+
+})
+</script>
+
+<nav>
+  <div class="navHeader">
+    <h1>__ Admin</h1>
+    <h3>[ <span id="nav_user_nm"><%= user.user_nm %></span> ]님</h3>
+    <div class="navHeaderBtns">
+      <button class="popSearch" id="updateAdminPwd">정보변경</button>
+      <button id="logout">로그아웃</button>
+    </div>
+  </div>
+
+  <ul>
+
+  </ul>
+</nav>
