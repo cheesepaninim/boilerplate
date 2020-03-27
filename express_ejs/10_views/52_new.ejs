@@ -1,0 +1,92 @@
+<h3>환율등록</h3>
+
+<!-- 환율 조회 view 영역 -->
+<div class="">
+    <form class="search" method="post">
+        <div class="row">
+            <div class="col">
+                <label for="today_date">기준일자</label>
+                <input type="text" name="today_date" id="today_date" class="dt dt_picker" disabled="disabled">
+            </div>
+            <div class="col">
+                <label for="user_id">등록자 ID</label>
+                <input type="text" name="user_id" id="user_id" disabled="disabled">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="currency_type">환율구분</label>
+                <input type="text" name="currency_type" id="s_currency_type" disabled="disabled" value="CNY -> USD">
+            </div>
+            <div class="col">
+                <label for="exchange_rate">적용환율</label>
+                <input type="text" name="exchange_rate" id="s_ct_1" disabled="disabled">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="currency_type">환율구분</label>
+                <input type="text" name="currency_type" id="s_currency_type" disabled="disabled" value="HKD -> USD">
+            </div>
+            <div class="col">
+                <label for="exchange_rate">적용환율</label>
+                <input type="text" name="exchange_rate" id="s_ct_2" disabled="disabled">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="currency_type">환율구분</label>
+                <input type="text" name="currency_type" id="s_currency_type" disabled="disabled" value="USDT 단가">
+            </div>
+            <div class="col">
+                <label for="std_usdt_price">기준단가</label>
+                <input type="text" name="std_usdt_price" id="s_ct_3" disabled="disabled">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="">
+    <button id="getExchRate" type="button">조회</button>
+</div>
+<!-- 환율 조회 view 영역 -->
+
+<form class="register" method="post">
+    <div class="r-row">
+        <div class="r-left-col">
+            <label for="default_dt">기준일자</label>
+            <input type="text" name="default_dt" id="default_dt" class="default_dt dt_picker" disabled="disabled">
+        </div>
+        <div class="r-right-col">
+        </div>
+    </div>
+
+    <div class="r-row">
+        <div class="r-left-col">
+            <label for="currency_1">환율구분</label>
+            <input type="text" name="currency_1" id="currency_1" disabled="disabled" value="CNY -> USD">
+            <label for="exchange_rate_c">적용환율</label>
+            <input type="number" name="exchange_rate_c" id="exchange_rate_c" required="required">
+        </div>
+        <div class="r-right-col">
+            <label for="currency_2">환율구분</label>
+            <input type="text" name="currency_2" id="currency_2" disabled="disabled" value="USD 단가">
+            <label for="std_usdt_price">기준단가</label>
+            <input type="number" name="std_usdt_price" id="std_usdt_price" required="required">
+        </div>
+    </div>
+
+    <div class="r-row">
+        <div class="r-left-col">
+            <label for="currency_3">환율구분</label>
+            <input type="text" name="currency_3" id="currency_3" disabled="disabled" value="HKD -> USD">
+            <label for="exchange_rate_h">적용환율</label>
+            <input type="number" name="exchange_rate_h" id="exchange_rate_h" required="required">
+        </div>
+        <div class="r-right-col">
+        </div>
+    </div>
+</form>
+
+<div class="">
+    <button id="register" type="button">입력</button>
+</div>
