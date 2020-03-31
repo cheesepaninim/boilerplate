@@ -10,3 +10,7 @@ $ npm i -g typescript
 $ npx create-react-app react-ts --template typescript
 (react, react-dom, react-scripts with cra-template-typescript)
 
+
+
+// TODO:
+// https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#reacttypescript-cheatsheets
