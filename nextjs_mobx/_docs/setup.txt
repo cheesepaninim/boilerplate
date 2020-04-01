@@ -23,12 +23,14 @@ $ npm i @babel/plugin-proposal-decorators @babel/plugin-proposal-class-propertie
   ]
 }
 
+
 // jest-dom node -v 8이상 // -D == --save-dev
 npm i -D jest
 npm i -D @testing-library/react @testing-library/jest-dom
 
 // https://github.com/mobxjs/mobx-react-devtoolshttps://github.com/mobxjs/mobx-react-devtools
 npm i -D mobx-react-devtools
+
 
 // package.json
 "scripts": {
@@ -55,3 +57,17 @@ module.export = {
 
 // npm 을 통한 명령어 실행중 ejsonparse 에러
 // package.json 에 불필요한 , 확인 혹은 그외 오타 등 확인
+
+
+// ts
+// https://nextjs.org/learn/excel/typescript/setup
+npm install -D typescript @types/node
+// tsx 파일 만들고 dev 실행시 tsconfig.json, next-env.d.ts 자동 생성
+
+// -> 이건 아직 안해봄
+
+// compiler-options
+// https://www.typescriptlang.org/docs/handbook/compiler-options.html
+// https://vomvoru.github.io/blog/tsconfig-compiler-options-kr/
+
+// https://github.com/mehmetsefabalik/next-typescript-materialui-jest-starter
