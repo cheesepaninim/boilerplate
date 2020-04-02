@@ -4,3 +4,4 @@ _temp/
 **/node_modules/
 
 **/_next
+**/.next
