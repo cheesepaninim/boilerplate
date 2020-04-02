@@ -62,7 +62,7 @@ module.export = {
 
 
 // ts
+// https://nextjs.org/learn/excel/typescript/setup
 npm install -D typescript @types/node
 // tsx 파일 만들고 dev 실행시 tsconfig.json, next-env.d.ts 자동 생성
-
 
