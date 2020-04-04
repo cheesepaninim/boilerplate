@@ -63,6 +63,12 @@ module.export = {
 
 // ts
 // https://nextjs.org/learn/excel/typescript/setup
-npm install -D typescript @types/node
+npm i -D typescript @types/node
+npm i -D @types/react @types/react-dom
 // tsx 파일 만들고 dev 실행시 tsconfig.json, next-env.d.ts 자동 생성
 
+
+
+
+// axios
+npm i axios
