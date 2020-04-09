@@ -6,6 +6,13 @@ module.exports = {
   },
   plugins: [
     /*
+     *
+     *
+     */
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-typescript`,
+
+    /*
      * Gatsby's data processing layer begins with “source” plugins. Here we
      * setup the site to pull data from the "documents" collection in a local
      * MongoDB instance
