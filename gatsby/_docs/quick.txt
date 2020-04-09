@@ -1,0 +1,25 @@
+// install the Gastby cli
+npm i -g gatsby-cli
+
+// create a new site
+gatsby new gatsby-site
+
+// change directories into site folder
+cd gatsby-site
+
+// start development server
+gatsby develop
+
+// create a production build
+gatsby build
+
+// serve the production build locally
+gatsby serve
+
+// access documentation for cli commands
+/*
+ To see detailed documentation for the CLI commands, run gatsby --help in the terminal.
+ For specific commands, run gatsby COMMAND_NAME --help e.g. gatsby new --help.
+ For more information on the Gatsby CLI, visit the CLI reference section of the docs.
+ https://www.gatsbyjs.org/docs/gatsby-cli/
+*/

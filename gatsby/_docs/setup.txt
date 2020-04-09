@@ -1,0 +1,3 @@
+// install the Gastby cli
+npm i -g gatsby-cli
+
