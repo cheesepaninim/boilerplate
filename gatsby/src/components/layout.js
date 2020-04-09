@@ -7,10 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import {useStaticQuery, graphql, Link} from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import Counter from "./Counter";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -39,6 +40,26 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
+      </div>
+
+      {/* MobX example */}
+      <div>
+        <Link to="/">
+          <h3>MobX example</h3>
+        </Link>
+        <Counter />
+        <ul>
+          <li>
+            <Link to="/a/">a</Link>
+          </li>
+          <li>
+            <Link to="/b/">b</Link>
+          </li>
+          <li>
+            <Link to="/c/">c</Link>
+          </li>
+        </ul>
+        {children}
       </div>
     </>
   )

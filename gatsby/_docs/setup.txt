@@ -6,3 +6,13 @@ npm i -g gatsby-cli
 // gatsby-source-mongodb
 [gatsby-config.js]
 https://www.gatsbyjs.org/packages/gatsby-source-mongodb/#gatsby-source-mongodb
+
+
+
+// gatsby with mobx -> wrap-with-provider
+npm i mobx mobx-react
+[gatsby-ssr.js]
+[wrap-with-provider.js]
+https://github.com/gatsbyjs/gatsby/tree/master/examples/using-mobx
+
+
