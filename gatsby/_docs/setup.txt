@@ -1,3 +1,8 @@
 // install the Gastby cli
 npm i -g gatsby-cli
 
+
+
+// gatsby-source-mongodb
+[gatsby-config.js]
+https://www.gatsbyjs.org/packages/gatsby-source-mongodb/#gatsby-source-mongodb
