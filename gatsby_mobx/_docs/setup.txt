@@ -4,3 +4,22 @@
 gatsby new gatsby_mobx https://github.com/borekb/gatsby-starter-mobx
 check# [package.json] | [.babelrc] | [gatsby-config.js] | [tsconfig.json]
 
+
+
+add plugins & install
+npm i gatsby-source-mongodb gatsby-plugin-react-helmet
+[gatsby-config.js]
+[
+  `gatsby-plugin-react-helmet`,
+  {
+    resolve: `gatsby-source-mongodb`,
+    options: {
+      dbName: `${mongodb.dbName}`,
+      collection: `${mongodb.collection}`,
+      server: { address: `${mongodb.server.address}`, port: `${mongodb.server.port}` },
+      auth: { user: `${mongodb.auth.user}`, password: `${mongodb.auth.password}` },
+      map: { documents: { description: `${mongodb.map.documents.description}` } }
+    },
+  },
+  `gatsby-plugin-react-helmet`,
+]
