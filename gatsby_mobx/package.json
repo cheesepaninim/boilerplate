@@ -5,7 +5,7 @@
   "author": "Borek Bernard <borekb@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "rm -rf public && rm -rf .cache && gatsby build",
     "tsc": "tsc",
     "lint": "tslint -p .",

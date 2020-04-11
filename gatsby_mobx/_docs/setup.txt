@@ -2,4 +2,5 @@
 
 // https://www.gatsbyjs.org/starters/borekb/gatsby-starter-mobx/
 gatsby new gatsby_mobx https://github.com/borekb/gatsby-starter-mobx
+check# [package.json] | [.babelrc] | [gatsby-config.js] | [tsconfig.json]
 
