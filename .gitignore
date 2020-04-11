@@ -1,4 +1,5 @@
 _temp/
+_config/
 
 **/.idea
 **/node_modules/
