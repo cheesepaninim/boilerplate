@@ -1,3 +1,5 @@
+const mongodb = require("./_config/mongodb");
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -24,10 +26,16 @@ module.exports = {
      * https://www.gatsbyjs.org/packages/gatsby-source-mongodb/#plugin-options
      *
      */
-    // {
-    //   resolve: `gatsby-source-mongodb`,
-    //   options: { dbName: `local`, collection: `documents` },
-    // },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        dbName: `${mongodb.dbName}`,
+        collection: `${mongodb.collection}`,
+        server: { address: `${mongodb.server.address}`, port: `${mongodb.server.port}` },
+        auth: { user: `${mongodb.auth.user}`, password: `${mongodb.auth.password}` },
+        map: { documents: { description: `${mongodb.map.documents.description}` } }
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
