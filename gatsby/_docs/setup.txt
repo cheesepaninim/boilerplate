@@ -15,6 +15,10 @@ npm i mobx mobx-react
 [gatsby-ssr.js]
 [wrap-with-provider.js]
 https://github.com/gatsbyjs/gatsby/tree/master/examples/using-mobx
+npm i babel-plugin-transform-decorators-legacy
+[.babelrc]
+// transform-decorators-legacy
+
 
 
 
