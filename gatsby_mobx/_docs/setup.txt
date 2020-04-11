@@ -1,0 +1,5 @@
+// gatsby-starter with mobx
+
+// https://www.gatsbyjs.org/starters/borekb/gatsby-starter-mobx/
+gatsby new gatsby_mobx https://github.com/borekb/gatsby-starter-mobx
+
