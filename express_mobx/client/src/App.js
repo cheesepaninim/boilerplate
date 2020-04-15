@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import './App.css'
 
-import { decorate, observable, action } from 'mobx'
+import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 
+@observer
 class App extends Component {
-  number = 0
+  @observable number = 0
 
+  @action
   increase = () => {
     this.number++
   }
 
+  @action
   decrease = () => {
     this.number--
   }
@@ -26,10 +29,4 @@ class App extends Component {
   }
 }
 
-decorate(App, {
-  number: observable,
-  increase: action,
-  decrease: action
-})
-
-export default observer(App)
+export default App

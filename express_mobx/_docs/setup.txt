@@ -4,7 +4,32 @@ cd server
 npm init -y
 npm i express
 
+
+
 // mobx
 npx create-react-app client
 cd client
 npm i mobx mobx-react
+
+// use decorator
+npm run eject
+[package.json]
+"babel": {
+  "presets": [
+    "react-app"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ]
+}
