@@ -1,29 +1,24 @@
 import React, { Component } from 'react'
 import './App.css'
 
-import { observable, action } from 'mobx'
-import { observer } from 'mobx-react'
+import {inject, observer} from 'mobx-react'
 
+@inject('counter')
+// to get specific store
+// @inject(store => ({
+//   number: store.counter.number,
+//   increase: store.counter.increase,
+//   decrease: store.counter.decrease
+// }))
 @observer
 class App extends Component {
-  @observable number = 0
-
-  @action
-  increase = () => {
-    this.number++
-  }
-
-  @action
-  decrease = () => {
-    this.number--
-  }
-
   render() {
+    const { counter } = this.props
     return (
         <div className="App">
-          <h1>{this.number}</h1>
-          <button onClick={this.increase}>+1</button>
-          <button onClick={this.decrease}>-1</button>
+          <h1>{counter.number}</h1>
+          <button onClick={counter.increase}>+1</button>
+          <button onClick={counter.decrease}>-1</button>
         </div>
     )
   }

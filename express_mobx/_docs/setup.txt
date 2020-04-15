@@ -33,3 +33,7 @@ npm run eject
     ]
   ]
 }
+
+// provide store
+[index.js]
+// -> Provider & React.StrictMode 순서 확인 필요
