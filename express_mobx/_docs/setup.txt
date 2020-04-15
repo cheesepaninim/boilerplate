@@ -37,3 +37,7 @@ npm run eject
 // provide store
 [index.js]
 // -> Provider & React.StrictMode 순서 확인 필요
+
+// TODO: mobx with react hooks
+// -> store 랑 component 따로 만들어서 하기
+// https://blog.rhostem.com/posts/2019-07-22-mobx-v6-and-react-v16-8
