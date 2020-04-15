@@ -1,0 +1,10 @@
+// express
+mkdir server
+cd server
+npm init -y
+npm i express
+
+// mobx
+npx create-react-app client
+cd client
+npm i mobx mobx-react
