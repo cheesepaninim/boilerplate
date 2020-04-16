@@ -41,3 +41,8 @@ npm run eject
 // TODO: mobx with react hooks
 // -> store 랑 component 따로 만들어서 하기
 // https://blog.rhostem.com/posts/2019-07-22-mobx-v6-and-react-v16-8
+// https://mobx-react.js.org/recipes-migration#hooks-for-the-resource
+[./src/index]
+[./src/component/CounterWithHook]
+[./src/store/counterWithHook]
+[./src/store/useStore]
