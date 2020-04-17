@@ -27,6 +27,8 @@ mkdir src\components
 [src/index.js]
 [src/App.js]
 
+
+
 /*
 * @babel/core           // 바벨을 사용하기 위한 필수 모듈
 * @babel/preset-env     // 스크립트 코드를 트랜스파일링하기 위한 플러그인들을 모아둔 모듈
@@ -35,6 +37,8 @@ mkdir src\components
 */
 npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
 [babel.config.js]
+
+
 
 /*
 * webpack               // 웹팩 모듈
@@ -45,6 +49,18 @@ npm i -D webpack webpack-cli html-webpack-plugin
 [webpack.config.js]
 
 [package.json] script 추가
+"wp": "webpack"
+
+npm i -D webpack-dev-server
+[webpack.config.js] devServer 추가
+devServer: {
+  contentBase: path.join(__dirname, "dist"),  // 해당 경로의 파일 변경시 번들
+  compress: true,
+  port: 80                                    // default: 8080
+}
+[package.json] script 추가
+"wp:dev": "webpack-dev-server --open"
+// -> 실시간 반영
 
 
 

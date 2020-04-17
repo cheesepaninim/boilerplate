@@ -30,5 +30,12 @@ module.exports = {
       // index.html에 output에서 만들어진 bundle.js를 적용하여, dist에 새로운 html 파일 생성
       template: `./public/index.html`
     })
-  ]
+  ],
+
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),  // 해당 경로의 파일 변경시 번들
+    compress: true,
+    port: 80                                    // default: 8080
+  }
+
 }
