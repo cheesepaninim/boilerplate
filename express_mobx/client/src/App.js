@@ -5,6 +5,7 @@ const App = () => {
       <>
         <div>Hello React World!</div>
         <div>with babel & webpack-dev-server</div>
+        <span>_docs ignore - revert test</span>
       </>
   )
 }
