@@ -6,7 +6,13 @@ npm i express
 
 
 
-// mobx
+// mobx with react hooks
+/*
+ https://leehwarang.github.io/2019/08/20/react_setting.html
+ https://ui.toast.com/weekly-pick/ko_20180910/
+ https://blog.rhostem.com/posts/2019-07-22-mobx-v6-and-react-v16-8
+ https://jonir227.github.io/develop/2019/09/09/mobx-react-v6-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98%ED%95%98%EA%B8%B0.html
+*/
 mkdir client
 cd client
 npm i react react-dom
@@ -15,6 +21,30 @@ npm i mobx mobx-react mobx-react-lite
 mkdir public
 [public/index.html]
 ..<div id="root"></div>..
+
+cd ..
+mkdir src\components
+[src/index.js]
+[src/App.js]
+
+/*
+* @babel/core           // 바벨을 사용하기 위한 필수 모듈
+* @babel/preset-env     // 스크립트 코드를 트랜스파일링하기 위한 플러그인들을 모아둔 모듈
+* @babel/preset-react   // 리액트 코드를 트랜스파일링하기 위한 플러그인들을 모아둔 모듈
+* babel-loader          // 웹팩을 돌릴 때 바벨을 적용하기 위한 모듈
+*/
+npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+[babel.config.js]
+
+/*
+* webpack               // 웹팩 모듈
+* webpack-cli           // 웹팩 명령어를 커맨드 라인에서 실행할 때 필요한 모듈
+* html-webpack-plugin   // 웹팩 실행이 완료된 번들 파일을 붙인 html 파일을 만들어 주는 모듈
+*/
+npm i -D webpack webpack-cli html-webpack-plugin
+[webpack.config.js]
+
+[package.json] script 추가
 
 
 
@@ -47,10 +77,6 @@ npm run eject
 
 // TODO: mobx with react hooks
 // -> store 랑 component 따로 만들어서 하기
-// [참고]
-// https://leehwarang.github.io/2019/08/20/react_setting.html
-// https://blog.rhostem.com/posts/2019-07-22-mobx-v6-and-react-v16-8
-// https://jonir227.github.io/develop/2019/09/09/mobx-react-v6-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98%ED%95%98%EA%B8%B0.html
 [./src/index]
 [./src/component/CounterWithHook]
 [./src/store/counterWithHook]
