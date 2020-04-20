@@ -6,7 +6,7 @@ const CounterData = () => {
   return useObserver(() => ({
     number: counter.number,
     increase: counter.increase
-  })
+  }))
 }
 
 const Counter = () => {
