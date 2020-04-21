@@ -8,7 +8,6 @@ const App = () => {
         <span>_docs ignore - revert test</span>
 
         <div>Counter</div>
-        <Counter/>
       </>
   )
 }
