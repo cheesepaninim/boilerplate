@@ -12,10 +12,10 @@ const Link = ({ active, children, onClick }) => (
     </button>
 )
 
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
-}
+// Link.propTypes = {
+//   active: PropTypes.bool.isRequired,
+//   children: PropTypes.node.isRequired,
+//   onClick: PropTypes.func.isRequired
+// }
 
 export default Link

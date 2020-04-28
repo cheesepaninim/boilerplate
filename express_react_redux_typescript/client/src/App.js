@@ -1,4 +1,7 @@
 import React from "react"
+import Footer from "./components/Layout/Footer"
+import AddTodo from "./containers/AddTodo"
+import VisibleTodoList from "./containers/VisibleTodoList"
 
 const App = () => {
   return (
@@ -6,7 +9,11 @@ const App = () => {
         <div>Hello React!</div>
         <div>with redux, react-helmet, typescript, express</div>
 
-        <div>Counter</div>
+        <div>
+          <AddTodo/>
+          <VisibleTodoList/>
+          <Footer/>
+        </div>
       </>
   )
 }
